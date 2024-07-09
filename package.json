@@ -1,0 +1,30 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "crud endpoints for VRS REST API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "pm2 start index.js --name 'nvrs'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderthenotsobad-git/nvrs.git"
+  },
+  "author": "AleanderTheNotSoBad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexanderthenotsobad-git/nvrs/issues"
+  },
+  "homepage": "https://github.com/alexanderthenotsobad-git/nvrs#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
