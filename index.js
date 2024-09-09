@@ -4,13 +4,13 @@ import appRouter from "./routes/index.js";
 import { config } from "dotenv";
 import { connectToDatabase } from "./db/index.js";
 const app = express();
+ 
+config(); // Load environment variables 
 
-config(); // Load environment variables
+//#region middlewares 
+app.use(express.json()); 
 
-//#region middlewares
-app.use(express.json());
-
-app.use("/api/v1/items", appRouter)
+app.use("/api/items", appRouter)
 
 const PORT = process.env.PORT || 5000;
 
