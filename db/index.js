@@ -1,4 +1,7 @@
 import { createPool } from 'mysql2/promise';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 //console.log('MySQL Config:', {
 //    port: process.env.MYSQL_PORT,
@@ -7,8 +10,7 @@ import { createPool } from 'mysql2/promise';
 //    database: process.env.MYSQL_DATABASE_NAME,
 //    user: process.env.MYSQL_USER,
 //});
-
-
+ 
 const pool = createPool ({
     port: process.env.MYSQL_PORT,
     password: process.env.MYSQL_PASSWORD,
@@ -28,4 +30,4 @@ const connectToDatabase = async () => {
     }
 };
 
-export { connectToDatabase, pool};
+export { connectToDatabase, pool };
