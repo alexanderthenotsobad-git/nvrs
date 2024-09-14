@@ -4,6 +4,15 @@ import appRouter from "./routes/index.js";
 import { config } from "dotenv";
 import { connectToDatabase } from "./db/index.js";
 const app = express();
+
+// CORS configuration
+const corsOptions = {
+  origin: 'http://localhost:8787', // Allow only your frontend origin
+  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
  
 config(); // Load environment variables 
 

@@ -1,7 +1,7 @@
 import { pool } from "./index.js";
 
 export const find = async () => {
-    const QUERY = `SELECT * FROM items`;
+    const QUERY = `SELECT * FROM menu_items`;
     try {
         const client = await pool.getConnection();
 
