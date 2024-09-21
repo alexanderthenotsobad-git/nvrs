@@ -18,7 +18,9 @@ config(); // Load environment variables
 
 //#region middlewares 
 app.use(express.json()); 
-
+app.get('/', (req, res) => {
+    res.send('Hello World! Your server is running.');
+  });
 app.use("/api/items", appRouter)
 
 const PORT = process.env.PORT || 5000;
