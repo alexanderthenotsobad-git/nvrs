@@ -2,8 +2,8 @@ import { create, find, findById } from "../db/queries.js";
 
 export const getAllItems = async(req,res) => {
      try {
-        const items = await find();
-        return res.status(200).json({ items });
+        const item = await find();
+        return res.status(200).json({ item });
         // Log the return item to the console
         console.log('Fetched items:', JSON.stringify(items, null, 2));
      }catch (error) {
