@@ -28,17 +28,18 @@ export const findById = async (id) => {
 };
 
 export const create = async (item_name, item_desc, price, item_pic) => {
-    const QUERY = `INSERT INTO menu_items 
-        (item_name, item_desc, price)
-        VALUES(?,?,?)` ;
+    const QUERY = `INSERT INTO menu_items
+        (item_name, item_desc, price, item_pic)
+        VALUES(?,?,?,?)`;
+    let client;
     try {
-        const client = await pool.getConnection();
+        client = await pool.getConnection();
         const result = await client.query(QUERY, [item_name, item_desc, price, item_pic]);
-        //console.log(result);
-        //return result;
-    }catch (error) {
-        console.log("Error while creating menu item", error);
+        return result;
+    } catch (error) {
+        console.error("Error while creating menu item", error);
         throw error;
+    } finally {
+        if (client) client.release();
     }
 };
- 
