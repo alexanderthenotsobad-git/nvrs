@@ -18,57 +18,51 @@
     <!-- Custom styles for this template -->
     <link href="/css/styles.css" rel="stylesheet">
 
-    <!-- Bootstrap Bundle with Popper -->
+    <style>
+      body {
+          padding-top: 130px;  /* We can adjust this number */
+      }
+    </style>
+
+    <style>
+      .tech-reference {
+          margin: 1.5rem 0;
+          font-style: italic;
+          border-left: 3px solid #0066cc;
+          padding-left: 1rem;
+      }
+      
+      .tech-link {
+          color: #0066cc;
+          text-decoration: none;
+          font-weight: 500;
+      }
+      
+      .tech-link:hover {
+          text-decoration: underline;
+      }
+      </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <body>
-    <div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <a
-              class="link-secondary"
-              href="https://www.alexanderthenotsobad.us/#"
-              >Subscribe</a
-            >
+      <div class="container-fluid fixed-top bg-white border-bottom">
+        <header class="blog-header py-3">
+          <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 text-center">
+              <a class="blog-header-logo text-dark" href="/">Alex's Tech Blog</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                Contact Me
+              </button>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <a class="link-secondary" href="#" aria-label="Search">
+                <!-- your existing SVG search icon -->
+              </a>
+            </div>
           </div>
-          <div class="col-4 text-center">
-            <a
-              class="blog-header-logo text-dark"
-              href="https://www.alexanderthenotsobad.us/#"
-              >Alex's Web Blog</a
-            >
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <a
-              class="link-secondary"
-              href="https://www.alexanderthenotsobad.us/#"
-              aria-label="Search"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="mx-3"
-                role="img"
-                viewBox="0 0 24 24"
-                data-darkreader-inline-stroke=""
-                style="--darkreader-inline-stroke: currentColor"
-              >
-                <title>Search</title>
-                <circle cx="10.5" cy="10.5" r="7.5"></circle>
-                <path d="M21 21l-5.2-5.2"></path>
-              </svg>
-            </a>
-            <!--<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>-->
-          </div>
-        </div>
-      </header>
-
+        </header>
+             
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
           <!--<a class="p-2 link-secondary" href="#">World</a>
@@ -86,11 +80,11 @@
           <!--<a class="p-2 link-secondary" href="#">Culture</a>
       <a class="p-2 link-secondary" href="#">Business</a>
       <a class="p-2 link-secondary" href="#">Politics</a>-->
-          <a
+          <!-- <a
             class="p-2 link-secondary"
             href="https://www.alexanderthenotsobad.us/#"
             >Opinion</a
-          >
+          > -->
           <!--<a class="p-2 link-secondary" href="#">Science</a>
       <a class="p-2 link-secondary" href="#">Health</a>
       <a class="p-2 link-secondary" href="#">Style</a>
@@ -102,7 +96,7 @@
     <main class="container">
       <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">
+          <h1 class="h2 fw-bold">  <!-- Changed from display-4 fst-italic -->
             Alex's Misadventures in Web Development
           </h1>
           <p class="lead my-3">
@@ -131,7 +125,7 @@
             
             <!-- Description -->
             <p class="card-text mb-auto">
-                Connect your local workbench to a MySQL VM.
+                Tunnel Workbench to a MySQL VM.
             </p>
             
             <!-- YouTube embed - replaces the previous link -->
@@ -198,7 +192,7 @@
             <h4 class="mb-0">Array Challenge.</h4>
             
             <!-- Time period -->
-            <div class="mb-1 text-muted">F2022</div>
+            <div class="mb-1 text-muted">2022</div>
             
             <!-- Description -->
             <p class="mb-auto">How to apply the Regular Expression.</p>
@@ -281,65 +275,23 @@
             <p>                          
               My path as a web developer has led me to build strong foundations in JavaScript and C#. I've successfully deployed solutions using Cloudflare's infrastructure, and I'm now preparing to expand into AWS Lambda development using C#. This cloud-first approach has shaped my understanding of modern web architecture.
               <br>
-              <p>Frontend: Next.js for dynamic web applications</p>
-              <p>Backend: Express and Node.js for server-side operations</p>
-              <p>Microsoft Stack: ASP.NET and C#, with focus on backend architecture</p>
+              <h3>Professional Toolset</h3>
+              <p class="tech-reference">
+                For a comprehensive overview of my technical expertise and years of experience, please see a detailed <a href="#tech-toolset" class="tech-link">technology stack breakdown</a>.
+              </p>
+
+              <style>
+              .tech-highlight {
+                  color: #0066cc;
+                  font-weight: 500;
+              }
+              </style>
               <p>
                 Data has been the foundation of my technical career. Starting with Excel analytics and visualizations, I progressed to building complex queries in MS SQL, eventually joining a Data Engineering team working with an Oracle data lake. Using Spotfire, we created interactive dashboards that transformed this enterprise data into marketable products. These solutions would later evolve into flagship products, still used today. 
               </p>
             </p>
-            <h2>Today's Tech Spiel</h2>
-            <p>
-              Today we count with a diverse set of basic terms. Let's focus on a
-              few:
-            </p>
-            <blockquote class="blockquote">
-              <p>Menus</p>
-            </blockquote>
-            <p>
-              Our plan to create a restaurant dine-in app was desultory, and challenging at first. 
-              Our experience in project management did not include Web Development,
-              but the project began taking shape once menu items were created.
-            </p>
-            <h3>Viable application</h3>
-            <p>
-              Let's focus on food menus and just point out some of their properties:
-            </p>
-            <ul>
-              <li>Source of data</li>
-              <li>Seamless access to options for users</li>
-              <li>Common protocol for communication</li>
-            </ul>
-
-            <ol>
-              <li>
-                Provide dine-in patrons with quick sign in and order options.
-              </li>
-              <li>
-                Finding balance between out-of-the-box functionality and
-                creating things myself.
-              </li>
-              <li>How to manage data.</li>
-            </ol>
-            <p>Let's review some of these nuances for context:</p>
-            <dl>
-              <dt>HyperText Markup Language (HTML)</dt>
-              <dd>
-                The language used to describe and define the content of a Web
-                page is necessary to "design" the layout of web pages
-              </dd>
-              <dt>Cascading Style Sheets (CSS)</dt>
-              <dd>
-                Used to describe the appearance of Web content. This particular
-                programming language helps format almost everything you see in a
-                page.
-              </dd>
-              <dt>JavaScript (JS)</dt>
-              <dd>
-                The programming language used to build advanced Web sites and
-                applications. By entering script tags in html, we can exeute, or
-                embed code
-              </dd>
+            
+            
               <dt>Database</dt>
               <dd>
                 We decided to use MySQL for this particular application.
@@ -348,94 +300,84 @@
                 offer security and data integrity advantages.
               </dd>
             </dl>
-            <h2>Bootstrap V5</h2>
-            <p>
-              The Bootstrap framework makes it easier to develop the front end
-              with the distinct functionality required for this partiular
-              project. <br />             
-            </p>
-           
-          <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-          <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-          <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-          <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-          <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-          <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-        </ul>
-        <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-        <h2>Heading</h2>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Sub-heading</h3>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <pre><code>Example code block</code></pre>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
 
-      <article class="blog-post">
-        <h2 class="blog-post-title">Another blog post</h2>
-        <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
+            <h3 id="tech-toolset">Tech Toolset</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Domain</th>
+                  <th scope="col">Technologies</th>
+                  <th scope="col">Focus Area</th>
+                  <th scope="col">Experience</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Frontend</strong></td>
+                  <td><span class="tech-highlight">Next.js</span></td>
+                  <td>Dynamic web applications</td>
+                  <td>< 1 year</td>
+                </tr>
+                <tr>
+                  <td><strong>Backend</strong></td>
+                  <td><span class="tech-highlight">Express</span>, <span class="tech-highlight">Node.js</span></td>
+                  <td>Server-side operations</td>
+                  <td>3-5 years</td>
+                </tr>
+                <tr>
+                  <td><strong>Microsoft Stack</strong></td>
+                  <td><span class="tech-highlight">ASP.NET</span>, <span class="tech-highlight">C#</span></td>
+                  <td>Backend architecture</td>
+                  <td>2+ years</td>
+                </tr>
+                <tr>
+                  <td><strong>Serverless Architecture</strong></td>
+                  <td><span class="tech-highlight">Cloudflare</span> (Wrangler CLI, Pages, Workers)</td>
+                  <td>Edge computing and serverless functions</td>
+                  <td>6 months</td>
+                </tr>
+                <tr>
+                  <td><strong>Cloud Infrastructure</strong></td>
+                  <td><span class="tech-highlight">AWS</span> (EC2, Route 53), <span class="tech-highlight">DreamHost</span> (DreamCompute)</td>
+                  <td>Virtual machine management, DNS routing, and cloud computing resources</td>
+                  <td>5+ years</td>
+                </tr>
+                <tr>
+                  <td><strong>Development Environment</strong></td>
+                  <td><span class="tech-highlight">VS Code</span></td>
+                  <td>IDE and development tools</td>
+                  <td>5+ years</td>
+                </tr>
+                <tr>
+                  <td><strong>Operating Systems</strong></td>
+                  <td><span class="tech-highlight">Ubuntu Linux</span></td>
+                  <td>System administration and development</td>
+                  <td>5+ years</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <style>
+            .tech-highlight {
+                color: #0066cc;
+                font-weight: 500;
+            }
+            .table {
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+            .table th {
+                background-color: #f8f9fa;
+            }
+            .table td {
+                vertical-align: middle;
+            }
+            </style>
 
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <blockquote>
-          <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-        </blockquote>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alice</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>4</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Charlie</td>
-              <td>7</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Totals</td>
-              <td>21</td>
-              <td>23</td>
-            </tr>
-          </tfoot>
-        </table>
-
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <article class="blog-post">
-        <h2 class="blog-post-title">New feature</h2>
-        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <ul>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ul>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <nav class="blog-pagination" aria-label="Pagination">
+      <!-- <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn btn-outline-primary" href="#">Older</a>
         <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
+      </nav> -->
 
     </div>
 
@@ -468,27 +410,52 @@
         <div class="p-4">
           <h4 class="fst-italic">Elsewhere</h4>
           <ol class="list-unstyled">
-            <li><a href="https://github.com/goalg/">GitHub</a></li>
+            <li><a href="https://github.com/AlexanderTheNotSoBad-git/">GitHub</a></li>
             <li>
-              <a href="https://www.linkedin.com/in/alexanderthenotsobad
-                >Linkedin</a
+              <a href="https://www.linkedin.com/in/alexanderthenotsobad/">Linkedin</a
               >
             </li>
             
           </ol>
         </div>
       </div>
+
+      <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="https://formspree.io/f/mzzblqnq" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea name="message" class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+
     </main>
 
     <footer class="blog-footer">
-      <p>
-        Blog template built for
-        <a href="https://getbootstrap.com/">Bootstrap</a> by
-        <a href="https://twitter.com/mdo">@mdo</a>.
-      </p>
+      
       <p>
         <a href="https://www.alexanderthenotsobad.us/#">Back to top</a>
       </p>
     </footer>
+  
   </body>
 </html>
