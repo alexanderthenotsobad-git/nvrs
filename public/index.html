@@ -1,97 +1,322 @@
-
 <!DOCTYPE html>
-<!-- saved from url=https://www.alexanderthenotsobad.us/ -->
-<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark">
+<!-- url=https://www.alexanderthenotsobad.us/
+ /var/www/nvrs/crud/public/ -->
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AlexanderTheNotSoBad</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    
-    <!-- Custom styles for this template -->
-    <link href="/css/styles.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
     <style>
+      /* Base styles */
       body {
-          padding-top: 130px;  /* We can adjust this number */
+        padding-top: 76px; /* Reduced for mobile */
+      }
+
+      @media (min-width: 768px) {
+        body {
+          padding-top: 130px; /* Original padding for desktop */
+        }
+      }
+
+      .blog-header-logo {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
+
+      @media (min-width: 768px) {
+        .blog-header-logo {
+          font-size: 1.75rem;
+        }
+      }
+
+      /* Navigation menu styles */
+      .navbar-toggler {
+        border: none;
+        padding: 0.25rem;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .navbar-toggler-icon {
+        width: 1.25em;
+        height: 1.25em;
+      }
+
+      /* Menu item styles */
+      .nav-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .nav-menu {
+          flex-direction: row;
+          justify-content: center;
+          gap: 2rem;
+        }
+      }
+
+      .nav-menu-item {
+        display: block;
+        font-weight: 500;
+        text-decoration: none;
+        color: #495057;
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      @media (min-width: 768px) {
+        .nav-menu-item {
+          width: auto;
+          position: relative;
+          border-bottom: none;
+        }
+
+        .nav-menu-item::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #0d6efd;
+          transition: width 0.3s ease;
+        }
+
+        .nav-menu-item:hover::after {
+          width: 100%;
+        }
+      }
+
+      .nav-menu-item:hover,
+      .nav-menu-item:focus {
+        color: #0d6efd;
+      }
+
+      /* Collapsible menu container */
+      #navbarNav {
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 767.98px) {
+        #navbarNav {
+          background-color: white;
+          border-bottom: 1px solid #eee;
+          margin-top: 0.5rem;
+        }
+
+        .navbar-collapse.show {
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      /* Contact button styles */
+      .contact-btn {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .contact-btn {
+          width: auto;
+          margin: 0;
+        }
+      }
+
+      /* VRS Project Section Styles */
+      .vrs-project-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .vrs-logo {
+        height: 24px;
+        transition: transform 0.3s ease;
+      }
+
+      .vrs-project-link:hover .vrs-logo {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 767.98px) {
+        .vrs-project-link {
+          justify-content: flex-start;
+          padding-left: 1rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .vrs-logo {
+          height: 28px;
+        }
+      }
+
+      /* Preserve your existing styles */
+      .tech-reference {
+        margin: 1.5rem 0;
+        font-style: italic;
+        border-left: 3px solid #0066cc;
+        padding-left: 1rem;
+      }
+
+      .tech-link {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .tech-link:hover {
+        text-decoration: underline;
       }
     </style>
-
-    <style>
-      .tech-reference {
-          margin: 1.5rem 0;
-          font-style: italic;
-          border-left: 3px solid #0066cc;
-          padding-left: 1rem;
-      }
-      
-      .tech-link {
-          color: #0066cc;
-          text-decoration: none;
-          font-weight: 500;
-      }
-      
-      .tech-link:hover {
-          text-decoration: underline;
-      }
-      </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
   <body>
-      <div class="container-fluid fixed-top bg-white border-bottom">
-        <header class="blog-header py-3">
-          <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 text-center">
-              <a class="blog-header-logo text-dark" href="/">Alex's Tech Blog</a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
-                Contact Me
-              </button>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-              <a class="link-secondary" href="#" aria-label="Search">
-                <!-- your existing SVG search icon -->
-              </a>
-            </div>
+    <header class="fixed-top bg-white border-bottom">
+      <div class="container">
+        <!-- Logo and Toggle Button Row -->
+        <nav class="navbar navbar-expand-md navbar-light px-0 py-2">
+          <a class="blog-header-logo text-dark" href="/">Alex's Tech Blog</a>
+
+          <div class="d-flex align-items-center">
+            <!-- Contact Button (visible on desktop only) -->
+            <button
+              class="btn btn-outline-primary d-none d-md-block ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#contactModal"
+            >
+              Contact Me
+            </button>
+
+            <!-- Hamburger Menu Button (visible on mobile only) -->
+            <button
+              class="navbar-toggler ms-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </div>
-        </header>
-             
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          <!--<a class="p-2 link-secondary" href="#">World</a>
+
+          <!-- Collapsible Navigation -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <nav class="nav-menu mt-3 mt-md-0">
+              <!-- VRS Project with logo -->
+              <a
+                class="nav-menu-item vrs-project-link"
+                href="nvrs-details.html"
+              >
+                <span>VRS Project</span>
+                <img
+                  src="/public/assets/img/VRS-tiny-logo.png"
+                  alt="VRS Logo"
+                  class="vrs-logo"
+                />
+              </a>
+              <a
+                class="nav-menu-item"
+                href="https://www.alexanderthenotsobad.us/#"
+                >Tech Musings</a
+              >
+              <a
+                class="nav-menu-item"
+                href="https://www.alexanderthenotsobad.us/#"
+                >Classroom Cred</a
+              >
+              <a
+                class="nav-menu-item d-md-none"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+                >Contact Me</a
+              >
+            </nav>
+
+            <!-- Contact Button (visible on mobile only) -->
+            <button
+              class="btn btn-outline-primary d-md-none contact-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#contactModal"
+            >
+              Contact Me
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav-menu">
+        <a
+          class="nav-menu-item"
+          href="https://www.alexanderthenotsobad.us/static/nvrs-details.html"
+          >VRS Project</a
+        >
+        <a class="nav-menu-item" href="https://www.alexanderthenotsobad.us/#"
+          >Tech Musings</a
+        >
+        <a class="nav-menu-item" href="https://www.alexanderthenotsobad.us/#"
+          >Classroom Cred</a
+        >
+        <a
+          class="nav-menu-item"
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#contactModal"
+          >Contact Me</a
+        >
+      </nav>
+    </div>
+
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <!--<a class="p-2 link-secondary" href="#">World</a>
       <a class="p-2 link-secondary" href="#">U.S.</a>-->
-          <a
-            class="p-2 link-secondary"
-            href="https://www.alexanderthenotsobad.us/#"
-            >Technology</a
-          >
-          <a
-            class="p-2 link-secondary"
-            href="https://www.alexanderthenotsobad.us/#"
-            >Classroom Cred</a
-          >
-          <!--<a class="p-2 link-secondary" href="#">Culture</a>
+
+        <!--<a class="p-2 link-secondary" href="#">Culture</a>
       <a class="p-2 link-secondary" href="#">Business</a>
       <a class="p-2 link-secondary" href="#">Politics</a>-->
-          <!-- <a
+        <!-- <a
             class="p-2 link-secondary"
             href="https://www.alexanderthenotsobad.us/#"
             >Opinion</a
           > -->
-          <!--<a class="p-2 link-secondary" href="#">Science</a>
+        <!--<a class="p-2 link-secondary" href="#">Science</a>
       <a class="p-2 link-secondary" href="#">Health</a>
       <a class="p-2 link-secondary" href="#">Style</a>
       <a class="p-2 link-secondary" href="#">Travel</a>-->
-        </nav>
-      </div>
+      </nav>
     </div>
 
     <main class="container">
@@ -99,20 +324,25 @@
       <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
         <div class="row">
           <div class="col-md-6">
-            <h1 class="h2 fw-bold">Latest: Node.js REST API Development</h1>
+            <h1 class="h2 fw-bold">
+              Latest: Node Typescript REST API Development
+            </h1>
             <h3>2025</h3>
             <p class="lead my-3">
-              Explore the development process of building a REST API using Typescript, Node.js, Express, and MySQL. Learn about server configuration, database integration, and API endpoint design.
+              Explore the development process of building a REST API using
+              Typescript, Node.js, Express, and MySQL. Learn about server
+              configuration, database integration, and API endpoint design.
             </p>
           </div>
           <div class="col-md-6">
             <div class="ratio ratio-16x9">
-              <iframe 
+              <iframe
                 src="https://www.youtube.com/embed/CW2UyXKN6rE"
                 title="Node.js REST API Development"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+                allowfullscreen
+              >
               </iframe>
             </div>
           </div>
@@ -121,39 +351,49 @@
 
       <div class="row mb-2">
         <div class="col-md-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
             <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">Technology</strong>
+              <strong class="d-inline-block mb-2 text-primary"
+                >Technology</strong
+              >
               <h3 class="mb-0">MySQL SSH</h3>
               <div class="mb-1 text-muted">2021</div>
               <p class="card-text mb-auto">Tunnel Workbench to a MySQL VM.</p>
               <div class="ratio ratio-16x9 mt-3">
-                <iframe 
+                <iframe
                   src="https://www.youtube.com/embed/vDZrzOEoERA"
                   title="MySQL SSH Tutorial"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
+                  allowfullscreen
+                >
                 </iframe>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
             <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Coding Challenge</strong>
+              <strong class="d-inline-block mb-2 text-success"
+                >Coding Challenge</strong
+              >
               <h4 class="mb-0">Array Challenge</h4>
               <div class="mb-1 text-muted">2022</div>
               <p class="mb-auto">How to apply the Regular Expression.</p>
               <div class="ratio ratio-16x9 mt-3">
-                <iframe 
+                <iframe
                   src="https://www.youtube.com/embed/IDUx4WaiVVg"
                   title="Array Challenge - Regular Expression Tutorial"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
+                  allowfullscreen
+                >
                 </iframe>
               </div>
             </div>
@@ -162,17 +402,21 @@
       </div>
 
       <div class="col-md-6 px-0">
-        <h1 class="h2 fw-bold">  <!-- Changed from display-4 fst-italic -->
+        <h1 class="h2 fw-bold">
+          <!-- Changed from display-4 fst-italic -->
           Alex's Misadventures in Web Development
         </h1>
         <p class="lead my-3">
-          After much perseverance, We were finally able to piece together a Rest API prototype using Typescript, MySQL, Express, NodeJS.
+          After much perseverance, We were finally able to piece together a Rest
+          API prototype using Typescript, MySQL, Express, NodeJS.
         </p>
         <p class="lead mb-0">
-          <a href="/static/nvrs-details.html" class="text-white fw-bold">Continue reading...</a>
+          <a href="/static/nvrs-details.html" class="text-white fw-bold"
+            >Continue reading...</a
+          >
         </p>
       </div>
-      <br>
+      <br />
       <div class="row g-5">
         <div class="col-md-8">
           <h3 class="pb-4 mb-4 fst-italic border-bottom">
@@ -187,23 +431,46 @@
             </p>
 
             <p>
-              A childhood fascination with flight simulators sparked my programming journey in BASIC. The project aimed to recreate every crucial element of flight – an ambitious goal for those early days. That same drive to tackle complex challenges persists today, though with a more sophisticated toolkit at hand.
+              A childhood fascination with flight simulators sparked my
+              programming journey in BASIC. The project aimed to recreate every
+              crucial element of flight – an ambitious goal for those early
+              days. That same drive to tackle complex challenges persists today,
+              though with a more sophisticated toolkit at hand.
             </p>
             <p>
-              Today, I continue to embrace development challenges with the same drive that fueled my first flight simulator project. My lifelong passion for learning, combined with modern technologies and years of experience, has sharpened my skills. Yet through all the technical growth, that pure childhood joy of creation still guides my approach to each new puzzle.
+              Today, I continue to embrace development challenges with the same
+              drive that fueled my first flight simulator project. My lifelong
+              passion for learning, combined with modern technologies and years
+              of experience, has sharpened my skills. Yet through all the
+              technical growth, that pure childhood joy of creation still guides
+              my approach to each new puzzle.
             </p>
             <hr />
-            <p>                          
-              My path as a web developer has led me to build strong foundations in JavaScript and C#. I've successfully deployed solutions using Cloudflare's infrastructure, and I'm now preparing to expand into AWS Lambda development using C#. This cloud-first approach has shaped my understanding of modern web architecture.
+            <p>
+              My path as a web developer has led me to build strong foundations
+              in JavaScript and C#. I've successfully deployed solutions using
+              Cloudflare's infrastructure, and I'm now preparing to expand into
+              AWS Lambda development using C#. This cloud-first approach has
+              shaped my understanding of modern web architecture.
             </p>
             <h3>Professional Toolset</h3>
             <p class="tech-reference">
-              For a comprehensive overview of my technical expertise and years of experience, please see a detailed <a href="#tech-toolset" class="tech-link">technology stack breakdown</a>.
+              For a comprehensive overview of my technical expertise and years
+              of experience, please see a detailed
+              <a href="#tech-toolset" class="tech-link"
+                >technology stack breakdown</a
+              >.
             </p>
             <p>
-              Data has been the foundation of my technical career. Starting with Excel analytics and visualizations, I progressed to building complex queries in MS SQL, eventually joining a Data Engineering team working with an Oracle data lake. Using Spotfire, we created interactive dashboards that transformed this enterprise data into marketable products. These solutions would later evolve into flagship products, still used today. 
+              Data has been the foundation of my technical career. Starting with
+              Excel analytics and visualizations, I progressed to building
+              complex queries in MS SQL, eventually joining a Data Engineering
+              team working with an Oracle data lake. Using Spotfire, we created
+              interactive dashboards that transformed this enterprise data into
+              marketable products. These solutions would later evolve into
+              flagship products, still used today.
             </p>
-            
+
             <dt>Database</dt>
             <dd>
               We decided to use MySQL for this particular application.
@@ -231,26 +498,41 @@
                 </tr>
                 <tr>
                   <td><strong>Backend</strong></td>
-                  <td><span class="tech-highlight">Express</span>, <span class="tech-highlight">Node.js</span></td>
+                  <td>
+                    <span class="tech-highlight">Express</span>,
+                    <span class="tech-highlight">Node.js</span>
+                  </td>
                   <td>Server-side operations</td>
                   <td>3-5 years</td>
                 </tr>
                 <tr>
                   <td><strong>Microsoft Stack</strong></td>
-                  <td><span class="tech-highlight">ASP.NET</span>, <span class="tech-highlight">C#</span></td>
+                  <td>
+                    <span class="tech-highlight">ASP.NET</span>,
+                    <span class="tech-highlight">C#</span>
+                  </td>
                   <td>Backend architecture</td>
                   <td>2+ years</td>
                 </tr>
                 <tr>
                   <td><strong>Serverless Architecture</strong></td>
-                  <td><span class="tech-highlight">Cloudflare</span> (Wrangler CLI, Pages, Workers)</td>
+                  <td>
+                    <span class="tech-highlight">Cloudflare</span> (Wrangler
+                    CLI, Pages, Workers)
+                  </td>
                   <td>Edge computing and serverless functions</td>
                   <td>6 months</td>
                 </tr>
                 <tr>
                   <td><strong>Cloud Infrastructure</strong></td>
-                  <td><span class="tech-highlight">AWS</span> (EC2, Route 53), <span class="tech-highlight">DreamHost</span> (DreamCompute)</td>
-                  <td>Virtual machine management, DNS routing, and cloud computing resources</td>
+                  <td>
+                    <span class="tech-highlight">AWS</span> (EC2, Route 53),
+                    <span class="tech-highlight">DreamHost</span> (DreamCompute)
+                  </td>
+                  <td>
+                    Virtual machine management, DNS routing, and cloud computing
+                    resources
+                  </td>
                   <td>5+ years</td>
                 </tr>
                 <tr>
@@ -271,10 +553,13 @@
         </div>
 
         <div class="col-md-4">
-          <div class="position-sticky" style="top: 2rem;">
+          <div class="position-sticky" style="top: 2rem">
             <div class="p-4 mb-3 bg-light rounded">
               <h4 class="fst-italic">About</h4>
-              <p class="mb-0">This web blog features musings, videos, stories and media related to my experience learning Full Stack Web Development.</p>
+              <p class="mb-0">
+                This web blog features musings, videos, stories and media
+                related to my experience learning Full Stack Web Development.
+              </p>
             </div>
 
             <div class="p-4">
@@ -287,9 +572,15 @@
             <div class="p-4">
               <h4 class="fst-italic">Elsewhere</h4>
               <ol class="list-unstyled">
-                <li><a href="https://github.com/AlexanderTheNotSoBad-git/">GitHub</a></li>
                 <li>
-                  <a href="https://www.linkedin.com/in/alexanderthenotsobad/">LinkedIn</a>
+                  <a href="https://github.com/AlexanderTheNotSoBad-git/"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/alexanderthenotsobad/"
+                    >LinkedIn</a
+                  >
                 </li>
               </ol>
             </div>
@@ -299,11 +590,96 @@
     </main>
 
     <footer class="blog-footer">
-      
       <p>
         <a href="https://www.alexanderthenotsobad.us/#">Back to top</a>
       </p>
     </footer>
-  
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="0e830ee8-ae9f-4d6d-bed4-6a22a5ba281f"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Contact from AlexanderTheNotSoBad"
+              />
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://www.alexanderthenotsobad.us/"
+              />
+              <input type="checkbox" name="botcheck" style="display: none" />
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

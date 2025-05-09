@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NVRS Project - Development Journey</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="link-secondary" href="/">Back to Home</a>
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-dark" href="/">NVRS Project</a>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <main class="container">
+      <article class="blog-post">
+        <h1 class="blog-post-title">NVRS: Evolution of a Full-Stack Project</h1>
+        <p class="blog-post-meta">
+          Project Overview by
+          <a href="https://github.com/AlexanderTheNotSoBad-git">Alex</a>
+        </p>
+
+        <div class="row mb-4">
+          <div class="col-md-8">
+            <h2>Project Background</h2>
+            <p>
+              The NVRS (Node.js Virtual Restaurant System) project represents my
+              journey through modern web development technologies. Starting with
+              vanilla JavaScript and evolving toward serverless architecture,
+              this project demonstrates the natural progression of web
+              application development in today's cloud-first world.
+            </p>
+            <div class="card text-center mb-4 shadow-sm">
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Visit the Live Project</h4>
+                    <p class="card-text">Experience the NVRS application in action</p>
+                    <a href="https://vrsprototype.com" class="btn btn-primary btn-lg">Launch NVRS Demo</a>
+                </div>
+            </div>
+            
+            <h2>Technical Evolution</h2>
+            <div class="tech-reference">
+              <h3>Phase 1: Foundation (Vanilla JS)</h3>
+              <ul>
+                <li>Express.js server handling route logic</li>
+                <li>MySQL database for data persistence</li>
+                <li>Basic client-side JavaScript for interactivity</li>
+                <li>Bootstrap for responsive design</li>
+              </ul>
+            </div>
+
+            <div class="tech-reference">
+              <h3>Phase 2: Modern Framework (Next.js)</h3>
+              <ul>
+                <li>Server-side rendering with Next.js</li>
+                <li>Enhanced routing capabilities</li>
+                <li>Improved state management</li>
+                <li>Better code organization and maintainability</li>
+              </ul>
+            </div>
+
+            <div class="tech-reference">
+              <h3>Phase 3: Future Direction (AWS Lambda)</h3>
+              <ul>
+                <li>Transitioning to serverless architecture</li>
+                <li>Implementing C# Lambda functions</li>
+                <li>API Gateway integration</li>
+                <li>Cloud-native scaling capabilities</li>
+              </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li>Secure user authentication system</li>
+              <li>RESTful API design principles</li>
+              <li>Responsive UI across devices</li>
+              <li>Scalable database architecture</li>
+            </ul>
+
+            <h3>Development Insights</h3>
+            <p>
+              The transition from vanilla JavaScript to Next.js revealed the
+              advantages of modern frameworks in managing complex applications.
+              The upcoming move to AWS Lambda represents our commitment to
+              scalable, maintainable architecture.
+            </p>
+
+            <h3>Future Enhancements</h3>
+            <ul>
+              <li>Serverless function implementation</li>
+              <li>Enhanced API documentation</li>
+              <li>Advanced caching mechanisms</li>
+              <li>Performance monitoring integration</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem">
+              <div class="p-4 mb-3 bg-light rounded">
+                <h4>Project Links</h4>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://github.com/AlexanderTheNotSoBad-git>GitHub Repository</a>
+                  </li>
+                  <li><a href="https://vrsprototype.com">Live Demo</a></li>
+                </ul>
+              </div>
+
+              <div class="p-4">
+                <h4>Tech Stack</h4>
+                <ul class="list-unstyled mb-0">
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>MySQL</li>
+                  <li>Next.js</li>
+                  <li>AWS Lambda (Coming Soon)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="blog-footer">
+      <p><a href="#">Back to top</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,3 +1,4 @@
+<!--// /var/www/nvrs/crud/public/nvrs-details.html-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +10,105 @@
       rel="stylesheet"
     />
     <link href="/css/styles.css" rel="stylesheet" />
+    <style>
+      .tech-reference {
+        margin: 1.5rem 0;
+        padding: 1.25rem;
+        border-left: 4px solid #0d6efd;
+        background-color: #f8f9fa;
+        border-radius: 0.25rem;
+      }
+      
+      .project-card {
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      }
+      
+      .project-card:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+      }
+      
+      .project-new-badge {
+        background-color: #198754;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        text-transform: uppercase;
+      }
+      
+      .project-legacy-badge {
+        background-color: #6c757d;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        text-transform: uppercase;
+      }
+      
+      .tech-stack-list {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      .tech-badge {
+        background-color: #e9ecef;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+      
+      .timeline-container {
+        margin: 2rem 0;
+        position: relative;
+      }
+      
+      .timeline-container::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background-color: #dee2e6;
+      }
+      
+      .timeline-item {
+        padding-left: 3rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0.2rem;
+        top: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: #0d6efd;
+      }
+      
+      .timeline-date {
+        font-weight: bold;
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -38,71 +138,150 @@
             <p>
               The NVRS (Node.js Virtual Restaurant System) project represents my
               journey through modern web development technologies. Starting with
-              vanilla JavaScript and evolving toward serverless architecture,
-              this project demonstrates the natural progression of web
+              vanilla JavaScript and evolving toward more sophisticated frameworks and serverless 
+              architecture, this project demonstrates the natural progression of web
               application development in today's cloud-first world.
             </p>
-            <div class="card text-center mb-4 shadow-sm">
-                <div class="card-body bg-light">
-                    <h4 class="card-title">Visit the Live Project</h4>
-                    <p class="card-text">Experience the NVRS application in action</p>
-                    <a href="https://vrsprototype.com" class="btn btn-primary btn-lg">Launch NVRS Demo</a>
-                </div>
+            
+            <h2>Current Projects</h2>
+            
+            <div class="project-card">
+              <h3>NVRS TypeScript with Next.js <span class="project-new-badge">New</span></h3>
+              <p>The latest iteration of the Virtual Restaurant Solutions platform leverages TypeScript and Next.js to create a more robust, type-safe, and performance-optimized application.</p>
+              
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5>Tech Stack:</h5>
+                <a href="https://nvrs-ts-v1.pages.dev/" class="btn btn-primary" target="_blank">Visit Project</a>
+              </div>
+              
+              <ul class="tech-stack-list">
+                <li class="tech-badge">TypeScript</li>
+                <li class="tech-badge">Next.js</li>
+                <li class="tech-badge">React.js</li>
+                <li class="tech-badge">Node.js</li>
+                <li class="tech-badge">Express.js</li>
+                <li class="tech-badge">MySQL</li>
+              </ul>
+              
+              <div class="tech-reference mt-3">
+                <h5>Key Improvements:</h5>
+                <ul>
+                  <li>Type-safe development with TypeScript to reduce runtime errors</li>
+                  <li>Server-side rendering capabilities through Next.js</li>
+                  <li>Improved state management and component architecture</li>
+                  <li>Enhanced performance through static site generation where applicable</li>
+                  <li>Modern UI with responsive design</li>
+                </ul>
+              </div>
             </div>
             
+            <div class="project-card">
+              <h3>NVRS Original <span class="project-legacy-badge">Legacy</span></h3>
+              <p>The foundation of the Virtual Restaurant Solutions platform, built with a classic Node.js/Express stack and vanilla JavaScript.</p>
+              
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5>Tech Stack:</h5>
+                <a href="https://vrsprototype.com" class="btn btn-secondary" target="_blank">Visit Project</a>
+              </div>
+              
+              <ul class="tech-stack-list">
+                <li class="tech-badge">JavaScript</li>
+                <li class="tech-badge">Node.js</li>
+                <li class="tech-badge">Express.js</li>
+                <li class="tech-badge">MySQL</li>
+                <li class="tech-badge">Apache 2.4</li>
+                <li class="tech-badge">AWS</li>
+              </ul>
+            </div>
+
             <h2>Technical Evolution</h2>
-            <div class="tech-reference">
-              <h3>Phase 1: Foundation (Vanilla JS)</h3>
-              <ul>
-                <li>Express.js server handling route logic</li>
-                <li>MySQL database for data persistence</li>
-                <li>Basic client-side JavaScript for interactivity</li>
-                <li>Bootstrap for responsive design</li>
-              </ul>
+            
+            <div class="timeline-container">
+              <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <h4>Phase 1: Foundation (Vanilla JS)</h4>
+                <p>The original NVRS prototype laid the groundwork with:</p>
+                <ul>
+                  <li>Express.js server handling route logic</li>
+                  <li>MySQL database for data persistence</li>
+                  <li>Basic client-side JavaScript for interactivity</li>
+                  <li>Bootstrap for responsive design</li>
+                  <li>Deployed on traditional server infrastructure</li>
+                </ul>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <h4>Phase 2: Modern Framework (Next.js with TypeScript)</h4>
+                <p>Evolving the application with current best practices:</p>
+                <ul>
+                  <li>TypeScript implementation for type safety</li>
+                  <li>Server-side rendering with Next.js</li>
+                  <li>Enhanced routing capabilities</li>
+                  <li>Improved state management</li>
+                  <li>Better code organization and maintainability</li>
+                  <li>Deployment on Cloudflare Pages for improved performance</li>
+                </ul>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-date">Future Plans</div>
+                <h4>Phase 3: Serverless Architecture (AWS Lambda)</h4>
+                <p>The roadmap for continuous improvement includes:</p>
+                <ul>
+                  <li>Transitioning to serverless architecture</li>
+                  <li>Implementing C# Lambda functions</li>
+                  <li>API Gateway integration</li>
+                  <li>Cloud-native scaling capabilities</li>
+                  <li>Enhanced security features</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="tech-reference">
-              <h3>Phase 2: Modern Framework (Next.js)</h3>
-              <ul>
-                <li>Server-side rendering with Next.js</li>
-                <li>Enhanced routing capabilities</li>
-                <li>Improved state management</li>
-                <li>Better code organization and maintainability</li>
-              </ul>
-            </div>
-
-            <div class="tech-reference">
-              <h3>Phase 3: Future Direction (AWS Lambda)</h3>
-              <ul>
-                <li>Transitioning to serverless architecture</li>
-                <li>Implementing C# Lambda functions</li>
-                <li>API Gateway integration</li>
-                <li>Cloud-native scaling capabilities</li>
-              </ul>
-            </div>
-
-            <h3>Key Features</h3>
+            <h3>Key Features Across All Versions</h3>
             <ul>
               <li>Secure user authentication system</li>
               <li>RESTful API design principles</li>
               <li>Responsive UI across devices</li>
               <li>Scalable database architecture</li>
+              <li>Order management workflow</li>
+              <li>Restaurant menu configuration</li>
             </ul>
 
             <h3>Development Insights</h3>
             <p>
-              The transition from vanilla JavaScript to Next.js revealed the
-              advantages of modern frameworks in managing complex applications.
-              The upcoming move to AWS Lambda represents our commitment to
-              scalable, maintainable architecture.
+              The transition from vanilla JavaScript to TypeScript and Next.js revealed significant advantages:
             </p>
+            <ul>
+              <li>Type safety drastically reduced runtime errors and improved developer experience</li>
+              <li>Component-based architecture with React simplified maintenance and feature development</li>
+              <li>Server-side rendering improved initial load performance and SEO capabilities</li>
+              <li>The structured nature of TypeScript enforced better coding practices</li>
+              <li>Modern tooling streamlined the development workflow</li>
+            </ul>
+            <p>
+              The upcoming move to AWS Lambda represents our commitment to scalable, maintainable architecture that can grow with demand without significant infrastructure management overhead.
+            </p>
+
+            <h3>Coming Soon</h3>
+            <div class="tech-reference">
+              <h5>Next Major Release Features:</h5>
+              <ul>
+                <li>.NET based security implementation</li>
+                <li>Admin dashboard with image upload capabilities for menu customization</li>
+                <li>Enhanced contextual menu controls for improved navigation</li>
+              </ul>
+            </div>
 
             <h3>Future Enhancements</h3>
             <ul>
-              <li>Serverless function implementation</li>
-              <li>Enhanced API documentation</li>
-              <li>Advanced caching mechanisms</li>
-              <li>Performance monitoring integration</li>
+              <li>Implementing C# serverless functions on AWS Lambda</li>
+              <li>Enhanced API documentation with Swagger/OpenAPI</li>
+              <li>Advanced caching mechanisms for improved performance</li>
+              <li>Real-time updates using WebSockets</li>
+              <li>Integration with third-party payment processors</li>
+              <li>Mobile app development with React Native</li>
+              <li>Performance monitoring and analytics integration</li>
             </ul>
           </div>
 
@@ -111,21 +290,59 @@
               <div class="p-4 mb-3 bg-light rounded">
                 <h4>Project Links</h4>
                 <ul class="list-unstyled">
-                  <li>
-                    <a href="https://github.com/AlexanderTheNotSoBad-git>GitHub Repository</a>
+                  <li class="mb-2">
+                    <strong>New TypeScript Version:</strong>
+                    <br>
+                    <a href="https://nvrs-ts-v1.pages.dev/" target="_blank">https://nvrs-ts-v1.pages.dev/</a>
                   </li>
-                  <li><a href="https://vrsprototype.com">Live Demo</a></li>
+                  <li class="mb-2">
+                    <strong>Original Version:</strong>
+                    <br>
+                    <a href="https://vrsprototype.com" target="_blank">https://vrsprototype.com</a>
+                  </li>
+                  <li>
+                    <strong>GitHub Repository:</strong>
+                    <br>
+                    <a href="https://github.com/AlexanderTheNotSoBad-git" target="_blank">GitHub Profile</a>
+                  </li>
                 </ul>
               </div>
 
-              <div class="p-4">
-                <h4>Tech Stack</h4>
-                <ul class="list-unstyled mb-0">
-                  <li>Node.js</li>
-                  <li>Express</li>
-                  <li>MySQL</li>
-                  <li>Next.js</li>
-                  <li>AWS Lambda (Coming Soon)</li>
+              <div class="p-4 bg-light rounded mb-3">
+                <h4>Tech Stack Evolution</h4>
+                <div class="mb-3">
+                  <h5>Original Stack</h5>
+                  <ul class="list-unstyled mb-0">
+                    <li>• Node.js</li>
+                    <li>• Express.js</li>
+                    <li>• Vanilla JavaScript</li>
+                    <li>• MySQL</li>
+                    <li>• Apache 2.4</li>
+                    <li>• AWS (S3, EC2, Route 53)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Current Stack</h5>
+                  <ul class="list-unstyled mb-0">
+                    <li>• TypeScript</li>
+                    <li>• Next.js</li>
+                    <li>• React.js</li>
+                    <li>• Node.js/Express (Backend)</li>
+                    <li>• MySQL</li>
+                    <li>• Cloudflare Pages</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="p-4 bg-light rounded">
+                <h4>Why TypeScript?</h4>
+                <p>TypeScript provides numerous advantages for complex applications:</p>
+                <ul class="small">
+                  <li>Static type checking catches errors during development</li>
+                  <li>Better IntelliSense and code completion</li>
+                  <li>Improved code documentation with types</li>
+                  <li>Enhanced refactoring capabilities</li>
+                  <li>Greater scalability for team development</li>
                 </ul>
               </div>
             </div>
